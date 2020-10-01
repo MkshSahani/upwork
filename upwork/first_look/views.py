@@ -36,7 +36,7 @@ def login_page(request):
             context['alert_message'] = "Your Email address and password is not recognized."
             return render(request, 'registration/login.html', context)
     else:
-        context = {}
+        context = {} # data send along with webpage.
         return render(request, 'registration/login.html', context)
 
 def signup_page(request):
@@ -100,7 +100,7 @@ def file_job(request):
                 man = Manager(job_id = j_id, income = income_, company_name = c_name, services = job_services, location = location, email_address = job_description)
                 print(man)
                 print("==========")
-                man.save()
+                man.save() # saving obje
             elif user_profile == "Designer":
                 des_ = Designer(job_id = j_id, income = income_, company_name = c_name, services = job_services, location = location, email_address = job_description)
                 des_.save()
